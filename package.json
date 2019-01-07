@@ -1,0 +1,70 @@
+{
+  "name": "@kard/react-router",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/react-router.js",
+  "module": "src/react-router.jsx",
+  "scripts": {
+    "lint": "eslint ./src --ext .js",
+    "test": "jest --coverage",
+    "build": "babel src -d dist",
+    "build:dev": "npm run build -- -w"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "keywords": [],
+  "author": {
+    "name": "Dmitriy Karmalita",
+    "email": "dmitriy.karmalita@gmail.com",
+    "url": "https://github.com/dkarmalita"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dkarmalita/kard-react-store.git/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkarmalita/react-form-engine.git"
+  },
+  "deprecated": false,
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-proposal-decorators": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "moment": "^2.23.0",
+    "regenerator-runtime": "^0.13.1",
+    "react": "^16.7.0-alpha.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.2"
+  }
+}
