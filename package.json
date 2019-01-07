@@ -34,11 +34,11 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dkarmalita/kard-react-store.git/issues"
+    "url": "https://github.com/dkarmalita/kard-react-router.git/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dkarmalita/react-form-engine.git"
+    "url": "git+https://github.com/dkarmalita/react-router.git"
   },
   "deprecated": false,
   "devDependencies": {
@@ -61,10 +61,10 @@
     "jest": "^23.6.0",
     "moment": "^2.23.0",
     "regenerator-runtime": "^0.13.1",
-    "react": "^16.7.0-alpha.2"
+    "react": "^16.7.0"
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "^16.7.0-alpha.2"
+    "react": "^16.7.0"
   }
 }
