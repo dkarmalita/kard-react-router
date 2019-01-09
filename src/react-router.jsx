@@ -135,7 +135,7 @@ export class Router extends Component {
     const { authConfig } = props
 
     isAuthorized = (authConfig || {}).isAuthorized || isAuthorized
-    getAuthRedirect = createGetRedirect(authConfig)
+    getAuthRedirect = authConfig ? createGetRedirect(authConfig) : getAuthRedirect
 
     forceUpdate = ()=>this.forceUpdate()
   }
