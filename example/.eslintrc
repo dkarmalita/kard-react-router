@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+  },
+  "globals": {
+    "process": false,
+    "module": false,
+    "it": false,
+    "expect": false,
+    "require": false,
+    "__dirname": false,
+  },
+  "rules": {
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "react/prop-types": 1,
+  }
+}
