@@ -102,6 +102,31 @@ const createGetRedirect = ({
 let forceUpdate = null
 
 /**
+ * Test a rout if it match to the route mask
+ * @param  {String} route - a route to test
+ * @param  {String} mask  - the mask to test with
+ * @return {Bool}         - the test result
+ */
+export const isRouteMatch = (route, mask) =>{
+  const testAsterisk = () => {
+    const astIdx = mask.indexOf('*')
+    if( astIdx < 0 ){ return false }
+    return route.startsWith(mask.substr(0,astIdx))
+  }
+  return route ===  mask || testAsterisk()
+}
+
+/**
+ * Helps to extract a valid link from mask
+ * @param  {String} mask - a link mask
+ * @return {String}      - valid link (part before '*' of the mask)
+ */
+export const getLinkOfMask = (mask) => {
+  const i = mask.indexOf('*')
+  return i < 0 ? mask : mask.substr(0, i )
+}
+
+/**
  * 4. Route detector & renderer
  * ----------------------------
  * @param  {Object}   _location - normilized (within `route` property) location
@@ -109,11 +134,24 @@ let forceUpdate = null
  * @return {DOM Node}           - result of a call of render with _location as props
  */
 const renderLocation = (location, config) => {
+
+  // TODO: review the call, looks like we need to give a `router` instead `_location`
+
   for (var i = 0; i <= config.length - 1; i++) {
     let { route, render } = config[i]
-    if(route ===  location.route || route === '*'){
-      // TODO: review the call, looks like we need to give a `router` instead `_location`
-      return render(location)
+
+    if( route ===  location.route ){ return render(location) }
+
+    const astIdx = route.indexOf('*')
+    if( astIdx >= 0 ){
+      const routePrefix = route.substr(0,astIdx)
+      if( location.route.startsWith(routePrefix) ){
+        return render({
+          ...location,
+          route: routePrefix,
+          routExtension: location.route.substr(astIdx)
+        })
+      }
     }
   }
   return null
